@@ -3,8 +3,6 @@
 import * as React from "react";
 import Link from "next/link";
 
-
-
 import { Route, routes } from "@/utils/routes";
 import { Button } from "../ui/button";
 import Image from "next/image";
@@ -15,15 +13,17 @@ import { usePathname } from "next/navigation";
 
 import useAppState from "@/store";
 import { Icons } from "../icons";
-import DetailsSkeleton from "./Skeleton";
+import PatientsSkeleton from "./Skeleton";
 import { Patient } from "@/interface";
 
 type PatientsProps = {
   patients: Patient[] | null;
+  onSelectPatient: (patient: Patient) => void;
 };
 
-const Patients: React.FC<PatientsProps> = ({ patients }) => {
+const Patients: React.FC<PatientsProps> = ({ patients, onSelectPatient }) => {
   const { isLoading } = useAppState();
+
   return (
     <>
       <div className="mt20 hscreen overflowauto h[1054px] p4 bg-none  ">
@@ -33,12 +33,13 @@ const Patients: React.FC<PatientsProps> = ({ patients }) => {
         </div>
         <div className="mb-6 h-screen [1054px] md:overflow-y-scroll overflow-auto md:hover:overflow-auto">
           {isLoading ? (
-            <DetailsSkeleton />
+            <PatientsSkeleton />
           ) : patients ? (
             <div className="bg-amber-00 ">
               {patients.map((patient) => (
                 <div
                   key={patient.name}
+                  onClick={() => onSelectPatient(patient)}
                   className="flex items-center justify-between hover:bg-[#D8FCF7]/40 hover:cursor-pointer gap-3 py-[16px] px-[20px] pr-[16px] w-full"
                 >
                   <div className="flex items-center">

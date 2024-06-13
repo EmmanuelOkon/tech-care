@@ -52,6 +52,9 @@ const useAppState = create<appStore>((set) => ({
   },
   fetchPatients: () => {
     set({ isLoading: true });
+    setTimeout(() => {
+      set({ isLoading: false });
+    }, 98000);
     fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/patients`, {
       headers: {
         Authorization: `Basic ${process.env.NEXT_PUBLIC_API_TOKEN}`,
