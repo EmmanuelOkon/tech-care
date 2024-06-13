@@ -5,7 +5,7 @@ import React from "react";
 
 type Props = {};
 
-const PatientDetails = (props: Props) => {
+const PatientDetails = () => {
   return (
     <AppContainer className="flex item-center w-full gap-4 p-0">
       <div className=" w-full max-w-[766px] bg-green-400 p-4 rounded-[16px] ">

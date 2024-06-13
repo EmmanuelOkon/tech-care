@@ -16,39 +16,20 @@ import { usePathname } from "next/navigation";
 import useAppState from "@/store";
 import { Icons } from "../icons";
 import DetailsSkeleton from "./Skeleton";
+import { Patient } from "@/interface";
 
-const Patients = () => {
-  const {
-    activeMenu,
-    setActiveMenu,
-    screenSize,
-    fetchPatients,
-    patients,
-    isLoading,
-  } = useAppState();
+type PatientsProps = {
+  patients: Patient[] | null;
+};
 
-  // const handleClosePatients = () => {
-  //   if (screenSize !== undefined) {
-  //     if (activeMenu && screenSize <= 900) {
-  //       setActiveMenu(false);
-  //     }
-  //   }
-  // };
-
-  React.useEffect(() => {
-    fetchPatients();
-  }, [fetchPatients]);
-
-  // const pathname = usePathname();
-
-  console.log(patients)
-
+const Patients: React.FC<PatientsProps> = ({ patients }) => {
+  const { isLoading } = useAppState();
   return (
     <>
       <div className="mt20 hscreen overflowauto h[1054px] p4 bg-none  ">
         <div className=" text-[#072635] flex items-center p-4 justify-between">
           <span className="text-[24px] font-extrabold ">Patients</span>
-          <Icons.Search className="floatright" aria-label="Search Icon" />
+          <Icons.Search aria-label="Search Icon" />
         </div>
         <div className="mb-6 h-screen [1054px] md:overflow-y-scroll overflow-auto md:hover:overflow-auto">
           {isLoading ? (

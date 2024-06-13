@@ -11,7 +11,7 @@ export const AppContainer: FC<AppContainerProps> = ({
   className,
 }) => {
   return (
-    <div className={cn("mt8 px-5 py-4 bg-lime-500", className)}>
+    <div className={cn("mt8 px-5 py-4", className)}>
       {children}
     </div>
   );
