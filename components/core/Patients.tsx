@@ -3,7 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 
-import { MdOutlineCancel } from "react-icons/md";
+
 
 import { Route, routes } from "@/utils/routes";
 import { Button } from "../ui/button";
@@ -17,7 +17,7 @@ import useAppState from "@/store";
 import { Icons } from "../icons";
 import DetailsSkeleton from "./Skeleton";
 
-const Sidebar = () => {
+const Patients = () => {
   const {
     activeMenu,
     setActiveMenu,
@@ -27,20 +27,21 @@ const Sidebar = () => {
     isLoading,
   } = useAppState();
 
-  const handleCloseSideBar = () => {
-    if (screenSize !== undefined) {
-      if (activeMenu && screenSize <= 900) {
-        setActiveMenu(false);
-      }
-    }
-  };
+  // const handleClosePatients = () => {
+  //   if (screenSize !== undefined) {
+  //     if (activeMenu && screenSize <= 900) {
+  //       setActiveMenu(false);
+  //     }
+  //   }
+  // };
 
   React.useEffect(() => {
     fetchPatients();
   }, [fetchPatients]);
 
-
   // const pathname = usePathname();
+
+  console.log(patients)
 
   return (
     <>
@@ -95,4 +96,4 @@ const Sidebar = () => {
   );
 };
 
-export default Sidebar;
+export default Patients;

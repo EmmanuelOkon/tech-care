@@ -4,7 +4,7 @@ import React from "react";
 
 import { FiSettings } from "react-icons/fi";
 import { Button } from "@/components/ui/button";
-import Sidebar from "@/components/core/Sidebar";
+import Patients from "@/components/core/Patients";
 
 import Navbar from "@/components/core/Navbar";
 
@@ -19,14 +19,12 @@ const HomeLayout = ({ children }: HomeLayoutProps) => {
   const currentColor = "#00FFFF";
 
   return (
-    <div>
-      <div className="flex">
-        <div className="bg-[#F6F7F8] min-h-screen w-full m-[18px] ">
-          <div className="static w-full">
-            <Navbar />
-          </div>
-          <div className="my-[18px] flx itemscenter gap-4 ">{children}</div>
+    <div className="flex">
+      <div className="bg-[#F6F7F8] min-h-screen w-full m-[18px] ">
+        <div className="static w-full">
+          <Navbar />
         </div>
+        <div className="my-[18px]">{children}</div>
       </div>
     </div>
   );
