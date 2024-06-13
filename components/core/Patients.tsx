@@ -1,15 +1,8 @@
 "use client";
 
 import * as React from "react";
-import Link from "next/link";
 
-import { Route, routes } from "@/utils/routes";
-import { Button } from "../ui/button";
 import Image from "next/image";
-
-import Logo from "../../public/images/TestLogo.svg";
-
-import { usePathname } from "next/navigation";
 
 import useAppState from "@/store";
 import { Icons } from "../icons";
@@ -26,7 +19,7 @@ const Patients: React.FC<PatientsProps> = ({ patients, onSelectPatient }) => {
 
   return (
     <>
-      <div className="mt20 hscreen overflowauto h[1054px] p4 bg-none  ">
+      <div className="bg-none  ">
         <div className=" text-[#072635] flex items-center p-4 justify-between">
           <span className="text-[24px] font-extrabold ">Patients</span>
           <Icons.Search aria-label="Search Icon" />

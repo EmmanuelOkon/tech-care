@@ -1,6 +1,5 @@
 import { AppContainer } from "@/components/core/AppContainer";
 import React from "react";
-import { Icons } from "../icons";
 
 type Props = {};
 

@@ -15,14 +15,17 @@ const DiagnosisHistory: React.FC<PatientDetailsProps> = ({ patient }) => {
 
   return (
     <div>
-      
       {patient && (
-        <div className="w-full max-w-[367px] bg-blue-500 rounded-[16px] p-4">
+        <div className="w-full max-w-[367px]">
+          <div className=" text-[#072635] flex items-center justify-between">
+            <span className="text-[24px] font-extrabold ">
+              Diagnosis History
+            </span>
+            
+          </div>
           
           <h2>{patient.insurance_type}</h2>
-
           <p>{formatDate(patient.date_of_birth)}</p>
-
           <p>{patient.phone_number}</p>
         </div>
       )}
