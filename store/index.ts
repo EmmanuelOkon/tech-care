@@ -1,3 +1,4 @@
+import { Patient } from "@/interface";
 import { create } from "zustand";
 
 interface IsClicked {
@@ -16,6 +17,8 @@ interface appStore {
   setIsClicked: (clicked: Partial<IsClicked>) => void;
   setScreenSize: (size: number) => void;
   setIsLoading: () => void;
+  patients: Patient[] | null;
+  fetchPatients: () => void;
 }
 
 const useAppState = create<appStore>((set) => ({
@@ -28,6 +31,7 @@ const useAppState = create<appStore>((set) => ({
   },
   isLoading: true,
   screenSize: undefined,
+  patients: null,
   setActiveMenu: (active) => set({ activeMenu: active }),
   setIsClicked: (clicked: Partial<IsClicked>) =>
     set(() => ({
@@ -45,6 +49,22 @@ const useAppState = create<appStore>((set) => ({
     setTimeout(() => {
       set({ isLoading: false });
     }, 3000);
+  },
+  fetchPatients: () => {
+    set({ isLoading: true });
+    fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/patients`, {
+      headers: {
+        Authorization: `Basic ${process.env.NEXT_PUBLIC_API_TOKEN}`,
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        set({ patients: data, isLoading: false });
+      })
+      .catch((error) => {
+        console.error("Error fetching patients:", error);
+        set({ isLoading: false });
+      });
   },
 }));
 

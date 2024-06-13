@@ -20,17 +20,12 @@ const HomeLayout = ({ children }: HomeLayoutProps) => {
 
   return (
     <div>
-      <div className="flex darkMode:bg-main-dark-bg">
-        <div className="bg-slate-100 min-h-screen w-full">
-          <div className="static bg-main-bg dark:bg-main-dark-bg w-full">
+      <div className="flex">
+        <div className="bg-[#F6F7F8] min-h-screen w-full m-[18px] ">
+          <div className="static w-full">
             <Navbar />
           </div>
-          <div className="flex m-2">
-            <div className="w64 md: w-72  dark:bg-secondary-dark-bg bg-white rounded-[16px] px2">
-              {/* <Sidebar /> */}
-            </div>
-            {children}
-          </div>
+          <div className="my-[18px] flx itemscenter gap-4 ">{children}</div>
         </div>
       </div>
     </div>

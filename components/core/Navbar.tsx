@@ -28,9 +28,9 @@ const Navbar = () => {
 
   return (
     <div
-      className={`flex sticky w-full items-center justify-between p-2 md:px-6 bg-white shadow-sm transition-transform duration-1000 ease-in-out rounded-[70px]`}
+      className={`flex sticky w-full items-center justify-between p2 h-[72px] md:px-6 bg-white shadow-sm transition-transform duration-1000 ease-in-out rounded-[70px]`}
     >
-      <div className="bg-red-600">
+      <div className="bg-red600">
         <Link
           href="/"
           className="items-center gap-3 py-2 ml-3 flex text-xl font-extrabold tracking-tight dark:text-white text-slate-900"

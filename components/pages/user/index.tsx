@@ -1,12 +1,14 @@
-import { AppContainer } from '@/components/core/AppContainer';
-import React from 'react'
+import { AppContainer } from "@/components/core/AppContainer";
+import React from "react";
 
-type Props = {}
+type Props = {};
 
 const Page = (props: Props) => {
   return (
-    <AppContainer>index</AppContainer>
-  )
-}
+    <AppContainer>
+      <div className="hidden">index</div>
+    </AppContainer>
+  );
+};
 
 export default Page;

@@ -87,4 +87,5 @@
 
 ::-webkit-scrollbar-track {
   background-color: #E3E4E6;
+  border-radius: 3px;
 }
