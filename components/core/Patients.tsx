@@ -16,10 +16,18 @@ type PatientsProps = {
 
 const Patients: React.FC<PatientsProps> = ({ patients, onSelectPatient }) => {
   const { isLoading } = useAppState();
+  const [activePatient, setActivePatient] = React.useState<Patient | null>(
+    null
+  );
+
+  const handleSelectPatient = (patient: Patient) => {
+    onSelectPatient(patient);
+    setActivePatient(patient);
+  };
 
   return (
     <>
-      <div className="bg-none  ">
+      <div className="bg-none">
         <div className=" text-[#072635] flex items-center p-4 justify-between">
           <span className="text-[24px] font-extrabold ">Patients</span>
           <Icons.Search aria-label="Search Icon" />
@@ -32,8 +40,12 @@ const Patients: React.FC<PatientsProps> = ({ patients, onSelectPatient }) => {
               {patients.map((patient) => (
                 <div
                   key={patient.name}
-                  onClick={() => onSelectPatient(patient)}
-                  className="flex items-center justify-between hover:bg-[#D8FCF7]/40 hover:cursor-pointer gap-3 py-[16px] px-[20px] pr-[16px] w-full"
+                  onClick={() => handleSelectPatient(patient)}
+                  className={`flex items-center justify-between hover:cursor-pointer gap-3 py-[16px] px-[20px] pr-[16px] w-full ${
+                    patient === activePatient
+                      ? "bg-[#D8FCF7]  "
+                      : "hover:bg-[#D8FCF7]/40"
+                  } `}
                 >
                   <div className="flex items-center">
                     <Image

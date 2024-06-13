@@ -1,6 +1,6 @@
 import React from "react";
 import { PatientDetailsProps } from "@/components/pages/patientDetails";
-import Image from "next/image";
+
 
 
 const DiagnosisHistory: React.FC<PatientDetailsProps> = ({ patient }) => {

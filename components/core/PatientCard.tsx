@@ -4,7 +4,6 @@ import { PatientDetailsProps } from "@/components/pages/patientDetails";
 import Image from "next/image";
 
 const PatientCard: React.FC<PatientDetailsProps> = ({ patient }) => {
-  console.log(patient);
 
   const formatDate = (dateString: string) => {
     const options = "numeric";
