@@ -46,8 +46,8 @@ const Navbar = () => {
             <Link
               key={route.name}
               href={route.href}
-              className={`flex mx-1 space-x2 items-center gap-2.5 px-4 py-3 pb2.5 rounded-[41px] text-[14px] text-[#072635] font-bold ${
-                activePage ? "bg-[#01F0D0] " : " hover:bg-gray-200"
+              className={`flex mx-1 space-x2 items-center gap-2.5 px-4 py-3 pb2.5 rounded-[41px] text-[14px] text-bgBlue font-bold ${
+                activePage ? "bg-bgGreen" : " hover:bg-gray-200"
               }`}
             >
               {route.icon}

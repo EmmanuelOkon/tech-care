@@ -28,7 +28,7 @@ const Patients: React.FC<PatientsProps> = ({ patients, onSelectPatient }) => {
   return (
     <>
       <div className="bg-none">
-        <div className=" text-[#072635] flex items-center p-4 justify-between">
+        <div className=" text-bgBlue flex items-center p-4 justify-between">
           <span className="text-[24px] font-extrabold ">Patients</span>
           <Icons.Search aria-label="Search Icon" />
         </div>
@@ -36,7 +36,7 @@ const Patients: React.FC<PatientsProps> = ({ patients, onSelectPatient }) => {
           {isLoading ? (
             <PatientsSkeleton />
           ) : patients ? (
-            <div className="bg-amber-00 ">
+            <div>
               {patients.map((patient) => (
                 <div
                   key={patient.name}
@@ -56,7 +56,7 @@ const Patients: React.FC<PatientsProps> = ({ patients, onSelectPatient }) => {
                       className="rounded-full"
                     />
                     <div className="flex flex-col pl-[12px]">
-                      <span className="text-[#072635] font-bold">
+                      <span className="text-bgBlue font-bold">
                         {patient.name}
                       </span>
                       <div className="flex items-center text-[#707070]">
@@ -67,7 +67,7 @@ const Patients: React.FC<PatientsProps> = ({ patients, onSelectPatient }) => {
                   </div>
                   <div className="justify-end p-2 flex items-center rounded-sm">
                     <Icons.MenuHorizontal
-                      className="text-[#072635]"
+                      className="text-bgBlue"
                       aria-label="Menu Icon"
                     />
                   </div>
@@ -75,7 +75,7 @@ const Patients: React.FC<PatientsProps> = ({ patients, onSelectPatient }) => {
               ))}
             </div>
           ) : (
-            <div>No patient data available</div>
+            <div className="p-4 w-full bg-red-00 ">No patients found</div>
           )}
         </div>
       </div>
