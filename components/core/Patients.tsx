@@ -27,12 +27,12 @@ const Patients: React.FC<PatientsProps> = ({ patients, onSelectPatient }) => {
 
   return (
     <>
-      <div className="bg-none">
+      <div className="bg-none pr-1">
         <div className=" text-bgBlue flex items-center p-4 justify-between">
           <span className="text-[24px] font-extrabold ">Patients</span>
           <Icons.Search aria-label="Search Icon" />
         </div>
-        <div className="mb-6 h-screen [1054px] md:overflow-y-scroll overflow-auto md:hover:overflow-auto">
+        <div className="mb-6 h-screen md:overflow-y-scroll overflow-auto md:hover:overflow-auto pr-1">
           {isLoading ? (
             <PatientsSkeleton />
           ) : patients ? (

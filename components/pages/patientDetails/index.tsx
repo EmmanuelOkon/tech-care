@@ -14,9 +14,9 @@ const PatientDetails: React.FC<PatientDetailsProps> = ({ patient }) => {
       <div className=" w-full max-w-[766px] bg-white p-4 rounded-[16px] ">
         <DiagnosisHistory patient={patient} />
       </div>
-      <div className="w-full max-w-[367px] bg-white rounded-[16px] p-5  ">
+      {/* <div className="w-full max-w-[367px] bg-white rounded-[16px] p-5  "> */}
         <PatientCard patient={patient} />
-      </div>
+      {/* </div> */}
     </AppContainer>
   );
 };

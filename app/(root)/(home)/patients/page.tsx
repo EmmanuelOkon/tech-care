@@ -43,8 +43,8 @@ const HomePage = () => {
   };
 
   return (
-    <div className="flex item-center w-full gap-4">
-      <div className="w-full max-w-[367px] bg-white rounded-[16px] px2">
+    <div className="flex items-start w-full gap-4">
+      <div className="w-full max-w-[367px] bg-white rounded-[16px]">
         <Patients patients={patients} onSelectPatient={handleSelectPatient} />
       </div>
 
